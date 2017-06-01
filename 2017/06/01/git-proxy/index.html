@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git,proxy,ca,cert,crt,代理,github,提速," />
 
 
 
@@ -93,12 +93,28 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog for Landao">
-<meta property="og:url" content="https://landao314.github.io/archives/2016/index.html">
+<meta name="description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
+1$git config --global http.proxy http://localhost:8087
+这时使用git时会报证书错误，所以要导入证书
+可以用
+1GIT_CURL_VERBOSE=true g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git proxy">
+<meta property="og:url" content="https://landao314.github.io/2017/06/01/git-proxy/index.html">
 <meta property="og:site_name" content="Blog for Landao">
+<meta property="og:description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
+1$git config --global http.proxy http://localhost:8087
+这时使用git时会报证书错误，所以要导入证书
+可以用
+1GIT_CURL_VERBOSE=true g">
+<meta property="og:updated_time" content="2017-06-01T09:10:29.603Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog for Landao">
+<meta name="twitter:title" content="git proxy">
+<meta name="twitter:description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
+1$git config --global http.proxy http://localhost:8087
+这时使用git时会报证书错误，所以要导入证书
+可以用
+1GIT_CURL_VERBOSE=true g">
 
 
 
@@ -126,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="https://landao314.github.io/archives/2016/"/>
+  <link rel="canonical" href="https://landao314.github.io/2017/06/01/git-proxy/"/>
 
 
 
 
 
-  <title>Archiv | Blog for Landao</title>
+  <title>git proxy | Blog for Landao</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -158,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,103 +258,174 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Öhm..! Insgesamt 4 Artikel. Bleib dran.
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/28/c/" itemprop="url">
-              
-                <span itemprop="name">Unbenannt</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-28T16:48:33+08:00"
-              content="2016-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/28/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-28T15:16:06+08:00"
-              content="2016-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/01/git-proxy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Landao He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog for Landao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git proxy</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T16:34:53+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我常用的是GoAgent的梯子，即是XX-net<br>但是一个比较麻烦的问题是Ca根证书要手动导入<br>这是Windows7下的Msys2环境下的git，linux下类似<br>首先要设置git的代理服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> config --global http.proxy http://localhost:8087</div></pre></td></tr></table></figure>
+<p>这时使用git时会报证书错误，所以要导入证书</p>
+<p>可以用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GIT_CURL_VERBOSE=<span class="literal">true</span> git <span class="built_in">clone</span> https://google.com</div></pre></td></tr></table></figure>
+<p>查看CAfile和CApath确定git是用哪一个证书的，linux下应该会是系统证书的地方<br>但是Msys2下是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\msys32\usr\ssl\certs\ca-bundle.crt</div></pre></td></tr></table></figure>
+<p>于是我将GoAgent的证书直接粘贴到这个文件的未尾，注意不要有多余的空行和字符</p>
+<p>现在git下载github上的文件速度可以说大辐提速，从50KB/s跳到1.5MB/s，爽！！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+            <a href="/tags/proxy/" rel="tag"># proxy</a>
+          
+            <a href="/tags/ca/" rel="tag"># ca</a>
+          
+            <a href="/tags/cert/" rel="tag"># cert</a>
+          
+            <a href="/tags/crt/" rel="tag"># crt</a>
+          
+            <a href="/tags/代理/" rel="tag"># 代理</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/提速/" rel="tag"># 提速</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/28/c/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/01/github-rsa/" rel="prev" title="github rsa">
+                github rsa <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -346,6 +433,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -532,11 +623,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
