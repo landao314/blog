@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -211,7 +211,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -254,6 +254,126 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/05/YouCompleteMe-on-Msys2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Landao He">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog for Landao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/05/YouCompleteMe-on-Msys2/" itemprop="url">YouCompleteMe on Msys2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-05T09:44:08+08:00">
+                2017-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="安装MSYS2"><a href="#安装MSYS2" class="headerlink" title="安装MSYS2"></a>安装MSYS2</h3><p>先安装MSYS2，然后更换软件源地址：<br><a href="https://gist.github.com/elvisw/cc00088e9c8fd1c83aca" target="_blank" rel="external">MSYS2国内源</a><br>不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。<br>替换完成，更新一下Msys2的软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -Syu</div></pre></td></tr></table></figure>
+<h3 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-gcc</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-cmake</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-llvm</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-python2</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-make</div><div class="line"><span class="variable">$pacman</span> -S git</div></pre></td></tr></table></figure>
+<h3 id="下载YouCompleteMe"><a href="#下载YouCompleteMe" class="headerlink" title="下载YouCompleteMe"></a>下载YouCompleteMe</h3><p>可以用vim的插件工具安装，也可以用git手动下载到相应文件夹。github在国内下载可能会<br>很慢，只有50kB/s，可以参考git代理的方法设置一个代理，可以提速。同时还要更新子模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/Valloric/YouCompleteMe</div><div class="line">$ <span class="built_in">cd</span> YouCompleteMe</div><div class="line">$ git submodule update --init --recursive</div></pre></td></tr></table></figure>
+<h3 id="编译YouCompleteMe"><a href="#编译YouCompleteMe" class="headerlink" title="编译YouCompleteMe"></a>编译YouCompleteMe</h3><p>在home下新建一个ycmd_build目录用于编译的中间文件存放，编译完可以删掉。<br>找到/mingw32/bin/clang.dll复制一份为clang.dll.4.0不然好像报一个找不到clang.dll.4.0的错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir ycmd_build</div><div class="line">$ <span class="built_in">cd</span> ycmd_build</div><div class="line">$ cmake -G <span class="string">"MSYS Makefiles"</span> -DPATH_TO_LLVM_ROOT=/mingw32 -DCMAKE_C_COMPILER=/mingw32/bin/gcc.exe -DCMAKE_CXX_COMPILER=/mingw32/bin/g++.exe -DCMAKE_MAKE_PROGRAM=/mingw32/bin/mingw32-make . /usr/share/vim/vimfiles/plugged/YouCompleteMe/third_party/ycmd/cpp/</div></pre></td></tr></table></figure>
+<p>如果不报错就生成了Makefile，这时可以用mingw32-make编译了,多核可以加 -j 参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mingw32-make ycm_core [-j 2*核数]</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/01/github-rsa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,7 +403,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T17:14:29+08:00">
                 2017-06-01
@@ -402,7 +522,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T16:34:53+08:00">
                 2017-06-01
@@ -512,7 +632,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/28/c/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2016/12/28/c/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -522,7 +642,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-28T16:48:33+08:00">
                 2016-12-28
@@ -634,7 +754,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-28T15:16:06+08:00">
                 2016-12-28
@@ -761,8 +881,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -775,7 +895,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -825,7 +945,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

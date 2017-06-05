@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,proxy,ca,cert,crt,代理,github,提速," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,28 +93,22 @@
 
 
 
-<meta name="description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
-1$git config --global http.proxy http://localhost:8087
-这时使用git时会报证书错误，所以要导入证书
-可以用
-1GIT_CURL_VERBOSE=true g">
+<meta name="description" content="安装MSYS2先安装MSYS2，然后更换软件源地址：MSYS2国内源不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。替换完成，更新一下Msys2的软件
+1pacman -Syu
+安装依赖软件123456$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llvm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git proxy">
-<meta property="og:url" content="https://landao314.github.io/2017/06/01/git-proxy/index.html">
+<meta property="og:title" content="YouCompleteMe on Msys2">
+<meta property="og:url" content="https://landao314.github.io/2017/06/05/YouCompleteMe-on-Msys2/index.html">
 <meta property="og:site_name" content="Blog for Landao">
-<meta property="og:description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
-1$git config --global http.proxy http://localhost:8087
-这时使用git时会报证书错误，所以要导入证书
-可以用
-1GIT_CURL_VERBOSE=true g">
-<meta property="og:updated_time" content="2017-06-01T09:10:29.603Z">
+<meta property="og:description" content="安装MSYS2先安装MSYS2，然后更换软件源地址：MSYS2国内源不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。替换完成，更新一下Msys2的软件
+1pacman -Syu
+安装依赖软件123456$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llvm">
+<meta property="og:updated_time" content="2017-06-05T03:11:30.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git proxy">
-<meta name="twitter:description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
-1$git config --global http.proxy http://localhost:8087
-这时使用git时会报证书错误，所以要导入证书
-可以用
-1GIT_CURL_VERBOSE=true g">
+<meta name="twitter:title" content="YouCompleteMe on Msys2">
+<meta name="twitter:description" content="安装MSYS2先安装MSYS2，然后更换软件源地址：MSYS2国内源不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。替换完成，更新一下Msys2的软件
+1pacman -Syu
+安装依赖软件123456$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llvm">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://landao314.github.io/2017/06/01/git-proxy/"/>
+  <link rel="canonical" href="https://landao314.github.io/2017/06/05/YouCompleteMe-on-Msys2/"/>
 
 
 
 
 
-  <title>git proxy | Blog for Landao</title>
+  <title>YouCompleteMe on Msys2 | Blog for Landao</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -268,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/01/git-proxy/">
+    <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/05/YouCompleteMe-on-Msys2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Landao He">
@@ -285,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git proxy</h1>
+          <h1 class="post-title" itemprop="name headline">YouCompleteMe on Msys2</h1>
         
 
         <div class="post-meta">
@@ -297,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T16:34:53+08:00">
-                2017-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-05T09:44:08+08:00">
+                2017-06-05
               </time>
             
 
@@ -332,15 +326,15 @@
       
 
       
-        <p>我常用的是GoAgent的梯子，即是XX-net<br>但是一个比较麻烦的问题是Ca根证书要手动导入<br>这是Windows7下的Msys2环境下的git，linux下类似<br>首先要设置git的代理服务器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> config --global http.proxy http://localhost:8087</div></pre></td></tr></table></figure>
-<p>这时使用git时会报证书错误，所以要导入证书</p>
-<p>可以用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GIT_CURL_VERBOSE=<span class="literal">true</span> git <span class="built_in">clone</span> https://google.com</div></pre></td></tr></table></figure>
-<p>查看CAfile和CApath确定git是用哪一个证书的，linux下应该会是系统证书的地方<br>但是Msys2下是</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\msys32\usr\ssl\certs\ca-bundle.crt</div></pre></td></tr></table></figure>
-<p>于是我将GoAgent的证书直接粘贴到这个文件的未尾，注意不要有多余的空行和字符</p>
-<p>现在git下载github上的文件速度可以说大辐提速，从50KB/s跳到1.5MB/s，爽！！</p>
+        <h3 id="安装MSYS2"><a href="#安装MSYS2" class="headerlink" title="安装MSYS2"></a>安装MSYS2</h3><p>先安装MSYS2，然后更换软件源地址：<br><a href="https://gist.github.com/elvisw/cc00088e9c8fd1c83aca" target="_blank" rel="external">MSYS2国内源</a><br>不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。<br>替换完成，更新一下Msys2的软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -Syu</div></pre></td></tr></table></figure>
+<h3 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-gcc</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-cmake</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-llvm</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-python2</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-make</div><div class="line"><span class="variable">$pacman</span> -S git</div></pre></td></tr></table></figure>
+<h3 id="下载YouCompleteMe"><a href="#下载YouCompleteMe" class="headerlink" title="下载YouCompleteMe"></a>下载YouCompleteMe</h3><p>可以用vim的插件工具安装，也可以用git手动下载到相应文件夹。github在国内下载可能会<br>很慢，只有50kB/s，可以参考git代理的方法设置一个代理，可以提速。同时还要更新子模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/Valloric/YouCompleteMe</div><div class="line">$ <span class="built_in">cd</span> YouCompleteMe</div><div class="line">$ git submodule update --init --recursive</div></pre></td></tr></table></figure>
+<h3 id="编译YouCompleteMe"><a href="#编译YouCompleteMe" class="headerlink" title="编译YouCompleteMe"></a>编译YouCompleteMe</h3><p>在home下新建一个ycmd_build目录用于编译的中间文件存放，编译完可以删掉。<br>找到/mingw32/bin/clang.dll复制一份为clang.dll.4.0不然好像报一个找不到clang.dll.4.0的错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir ycmd_build</div><div class="line">$ <span class="built_in">cd</span> ycmd_build</div><div class="line">$ cmake -G <span class="string">"MSYS Makefiles"</span> -DPATH_TO_LLVM_ROOT=/mingw32 -DCMAKE_C_COMPILER=/mingw32/bin/gcc.exe -DCMAKE_CXX_COMPILER=/mingw32/bin/g++.exe -DCMAKE_MAKE_PROGRAM=/mingw32/bin/mingw32-make . /usr/share/vim/vimfiles/plugged/YouCompleteMe/third_party/ycmd/cpp/</div></pre></td></tr></table></figure>
+<p>如果不报错就生成了Makefile，这时可以用mingw32-make编译了,多核可以加 -j 参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mingw32-make ycm_core [-j 2*核数]</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -368,26 +362,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag"># git</a>
-          
-            <a href="/tags/proxy/" rel="tag"># proxy</a>
-          
-            <a href="/tags/ca/" rel="tag"># ca</a>
-          
-            <a href="/tags/cert/" rel="tag"># cert</a>
-          
-            <a href="/tags/crt/" rel="tag"># crt</a>
-          
-            <a href="/tags/代理/" rel="tag"># 代理</a>
-          
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/提速/" rel="tag"># 提速</a>
-          
-        </div>
-      
 
       
       
@@ -397,8 +371,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/28/c/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2017/06/01/github-rsa/" rel="next" title="github rsa">
+                <i class="fa fa-chevron-left"></i> github rsa
               </a>
             
           </div>
@@ -406,10 +380,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/01/github-rsa/" rel="prev" title="github rsa">
-                github rsa <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -456,8 +426,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -510,6 +489,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MSYS2"><span class="nav-number">1.</span> <span class="nav-text">安装MSYS2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">2.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载YouCompleteMe"><span class="nav-number">3.</span> <span class="nav-text">下载YouCompleteMe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译YouCompleteMe"><span class="nav-number">4.</span> <span class="nav-text">编译YouCompleteMe</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
