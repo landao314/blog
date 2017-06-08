@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,proxy,ca,cert,crt,代理,github,提速," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,28 +93,22 @@
 
 
 
-<meta name="description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
-1$git config --global http.proxy http://localhost:8087
-这时使用git时会报证书错误，所以要导入证书
-可以用
-1GIT_CURL_VERBOSE=true g">
+<meta name="description" content="InstantRst on Msys2按照 riv.vm官网按照 InstantRst官网按照 instant-rst.py官网
+先在Msys2上用pacman安装好pip，然后用pip按照官网的地址安装InstantRstvim里用插件工具安装好riv和instantRst.但是这时候vim里:InstantRst只能开服务不能自动打开浏览器.之前查到问题出在脚本instantRst上.
+HOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git proxy">
-<meta property="og:url" content="https://landao314.github.io/2017/06/01/git-proxy/index.html">
+<meta property="og:title" content="InstantRst no Msys2">
+<meta property="og:url" content="https://landao314.github.io/2017/06/07/InstantRst-no-Msys2/index.html">
 <meta property="og:site_name" content="Blog for Landao">
-<meta property="og:description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
-1$git config --global http.proxy http://localhost:8087
-这时使用git时会报证书错误，所以要导入证书
-可以用
-1GIT_CURL_VERBOSE=true g">
-<meta property="og:updated_time" content="2017-06-01T09:10:29.603Z">
+<meta property="og:description" content="InstantRst on Msys2按照 riv.vm官网按照 InstantRst官网按照 instant-rst.py官网
+先在Msys2上用pacman安装好pip，然后用pip按照官网的地址安装InstantRstvim里用插件工具安装好riv和instantRst.但是这时候vim里:InstantRst只能开服务不能自动打开浏览器.之前查到问题出在脚本instantRst上.
+HOS">
+<meta property="og:updated_time" content="2017-06-07T06:48:06.089Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git proxy">
-<meta name="twitter:description" content="我常用的是GoAgent的梯子，即是XX-net但是一个比较麻烦的问题是Ca根证书要手动导入这是Windows7下的Msys2环境下的git，linux下类似首先要设置git的代理服务器
-1$git config --global http.proxy http://localhost:8087
-这时使用git时会报证书错误，所以要导入证书
-可以用
-1GIT_CURL_VERBOSE=true g">
+<meta name="twitter:title" content="InstantRst no Msys2">
+<meta name="twitter:description" content="InstantRst on Msys2按照 riv.vm官网按照 InstantRst官网按照 instant-rst.py官网
+先在Msys2上用pacman安装好pip，然后用pip按照官网的地址安装InstantRstvim里用插件工具安装好riv和instantRst.但是这时候vim里:InstantRst只能开服务不能自动打开浏览器.之前查到问题出在脚本instantRst上.
+HOS">
 
 
 
@@ -142,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://landao314.github.io/2017/06/01/git-proxy/"/>
+  <link rel="canonical" href="https://landao314.github.io/2017/06/07/InstantRst-no-Msys2/"/>
 
 
 
 
 
-  <title>git proxy | Blog for Landao</title>
+  <title>InstantRst no Msys2 | Blog for Landao</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -268,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/01/git-proxy/">
+    <link itemprop="mainEntityOfPage" href="https://landao314.github.io/2017/06/07/InstantRst-no-Msys2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Landao He">
@@ -285,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git proxy</h1>
+          <h1 class="post-title" itemprop="name headline">InstantRst no Msys2</h1>
         
 
         <div class="post-meta">
@@ -297,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-01T16:34:53+08:00">
-                2017-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-07T11:45:03+08:00">
+                2017-06-07
               </time>
             
 
@@ -332,15 +326,14 @@
       
 
       
-        <p>我常用的是GoAgent的梯子，即是XX-net<br>但是一个比较麻烦的问题是Ca根证书要手动导入<br>这是Windows7下的Msys2环境下的git，linux下类似<br>首先要设置git的代理服务器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> config --global http.proxy http://localhost:8087</div></pre></td></tr></table></figure>
-<p>这时使用git时会报证书错误，所以要导入证书</p>
-<p>可以用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GIT_CURL_VERBOSE=<span class="literal">true</span> git <span class="built_in">clone</span> https://google.com</div></pre></td></tr></table></figure>
-<p>查看CAfile和CApath确定git是用哪一个证书的，linux下应该会是系统证书的地方<br>但是Msys2下是</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\msys32\usr\ssl\certs\ca-bundle.crt</div></pre></td></tr></table></figure>
-<p>于是我将GoAgent的证书直接粘贴到这个文件的未尾，注意不要有多余的空行和字符</p>
-<p>现在git下载github上的文件速度可以说大辐提速，从50KB/s跳到1.5MB/s，爽！！</p>
+        <h3 id="InstantRst-on-Msys2"><a href="#InstantRst-on-Msys2" class="headerlink" title="InstantRst on Msys2"></a>InstantRst on Msys2</h3><p>按照 <a href="https://github.com/Rykka/riv.vim" target="_blank" rel="external">riv.vm官网</a><br>按照 <a href="https://github.com/Rykka/InstantRst" target="_blank" rel="external">InstantRst官网</a><br>按照 <a href="https://github.com/rykka/instant-rst.py" target="_blank" rel="external">instant-rst.py官网</a></p>
+<p>先在Msys2上用pacman安装好pip，然后用pip按照官网的地址安装InstantRst<br>vim里用插件工具安装好riv和instantRst.但是这时候vim里:InstantRst只能开服务<br>不能自动打开浏览器.之前查到问题出在脚本instantRst上.</p>
+<h3 id="HOST问题"><a href="#HOST问题" class="headerlink" title="HOST问题"></a>HOST问题</h3><p>cd到/mingw/bin,打开instantRst,找到def browse(b,……)函数,添加bhost参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">browse</span><span class="params">(b, port, filename, bhost)</span>:</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    url =  <span class="string">'http://'</span> + bhost + <span class="string">':'</span>+ port</div></pre></td></tr></table></figure></p>
+<p>后面调用也要添加bhost参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ag.localhost_only:</div><div class="line">    HOST = <span class="string">"localhost"</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="comment"># get hostname of local LAN IP</span></div><div class="line">    HOST = socket.gethostbyname(socket.gethostname())</div><div class="line"></div><div class="line">p = Process(target=browse, args=(ag.browser, ag.port, ag.filename, HOST))</div></pre></td></tr></table></figure></p>
+<h3 id="多线程返回问题"><a href="#多线程返回问题" class="headerlink" title="多线程返回问题"></a>多线程返回问题</h3><p>instantRst这个脚本开了线程运行服务后,应该返回到原脚本上,但是在Msys2下其返回到<br>instantRst.py这个文件上,注意啦是多了”.py”,然后我就复制多一份原来的instantRst并<br>改为instantRst.py,但因为python的一些问题,要添加freeze_support和rstmain</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process,freeze_support</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">rstmain</span><span class="params">()</span>:</span></div><div class="line">	ag = args.parse()</div><div class="line"></div><div class="line">	<span class="keyword">if</span> ag.localhost_only:</div><div class="line">	    HOST = <span class="string">"localhost"</span></div><div class="line">	<span class="keyword">else</span>:</div><div class="line">	    <span class="comment"># get hostname of local LAN IP</span></div><div class="line">	    HOST = socket.gethostbyname(socket.gethostname())</div><div class="line"></div><div class="line">	p = Process(target=browse, args=(ag.browser, ag.port, ag.filename, HOST))</div><div class="line">	p.start()</div><div class="line"></div><div class="line">	<span class="keyword">try</span>:</div><div class="line">	    run(host=HOST, port=int(ag.port),</div><div class="line">		template_dir=ag.template_dir,</div><div class="line">		static_dir=ag.static_dir,</div><div class="line">		additional_dirs=ag.additional_dirs)</div><div class="line">	<span class="keyword">except</span>:</div><div class="line">	    <span class="keyword">print</span> <span class="string">'\nSome error/exception occurred.'</span></div><div class="line">	    <span class="keyword">print</span> sys.exc_info()</div><div class="line">	    p.terminate()</div><div class="line">	    sys.exit()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	freeze_support()</div><div class="line">	rstmain()</div></pre></td></tr></table></figure>
+<p>简单说就是要将执行的代码放到rstmain里,再在下面调用,这样就可以调出浏览器了啊.</p>
 
       
     </div>
@@ -368,26 +361,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag"># git</a>
-          
-            <a href="/tags/proxy/" rel="tag"># proxy</a>
-          
-            <a href="/tags/ca/" rel="tag"># ca</a>
-          
-            <a href="/tags/cert/" rel="tag"># cert</a>
-          
-            <a href="/tags/crt/" rel="tag"># crt</a>
-          
-            <a href="/tags/代理/" rel="tag"># 代理</a>
-          
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/提速/" rel="tag"># 提速</a>
-          
-        </div>
-      
 
       
       
@@ -397,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/28/c/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2017/06/05/YouCompleteMe-on-Msys2/" rel="next" title="YouCompleteMe on Msys2">
+                <i class="fa fa-chevron-left"></i> YouCompleteMe on Msys2
               </a>
             
           </div>
@@ -407,8 +380,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/01/github-rsa/" rel="prev" title="github rsa">
-                github rsa <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/08/Vimim-on-Msys2/" rel="prev" title="Vimim on Msys2">
+                Vimim on Msys2 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -456,8 +429,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -510,6 +492,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#InstantRst-on-Msys2"><span class="nav-number">1.</span> <span class="nav-text">InstantRst on Msys2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOST问题"><span class="nav-number">2.</span> <span class="nav-text">HOST问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程返回问题"><span class="nav-number">3.</span> <span class="nav-text">多线程返回问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
