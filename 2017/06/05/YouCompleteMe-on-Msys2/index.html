@@ -95,20 +95,20 @@
 
 <meta name="description" content="安装MSYS2先安装MSYS2，然后更换软件源地址：MSYS2国内源不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。替换完成，更新一下Msys2的软件
 1pacman -Syu
-安装依赖软件123456$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llvm">
+安装依赖软件1234567$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YouCompleteMe on Msys2">
 <meta property="og:url" content="https://landao314.github.io/2017/06/05/YouCompleteMe-on-Msys2/index.html">
 <meta property="og:site_name" content="Blog for Landao">
 <meta property="og:description" content="安装MSYS2先安装MSYS2，然后更换软件源地址：MSYS2国内源不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。替换完成，更新一下Msys2的软件
 1pacman -Syu
-安装依赖软件123456$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llvm">
-<meta property="og:updated_time" content="2017-06-06T03:26:59.439Z">
+安装依赖软件1234567$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llv">
+<meta property="og:updated_time" content="2017-06-12T00:58:52.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="YouCompleteMe on Msys2">
 <meta name="twitter:description" content="安装MSYS2先安装MSYS2，然后更换软件源地址：MSYS2国内源不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。替换完成，更新一下Msys2的软件
 1pacman -Syu
-安装依赖软件123456$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llvm">
+安装依赖软件1234567$pacman -S mingw-w64-i686-gcc$pacman -S mingw-w64-i686-cmake$pacman -S mingw-w64-i686-llv">
 
 
 
@@ -209,7 +209,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -219,7 +219,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -289,7 +289,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-05T09:44:08+08:00">
                 2017-06-05
@@ -328,7 +328,7 @@
       
         <h3 id="安装MSYS2"><a href="#安装MSYS2" class="headerlink" title="安装MSYS2"></a>安装MSYS2</h3><p>先安装MSYS2，然后更换软件源地址：<br><a href="https://gist.github.com/elvisw/cc00088e9c8fd1c83aca" target="_blank" rel="external">MSYS2国内源</a><br>不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。<br>替换完成，更新一下Msys2的软件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pacman -Syu</div></pre></td></tr></table></figure>
-<h3 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-gcc</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-cmake</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-llvm</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-python2</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-make</div><div class="line"><span class="variable">$pacman</span> -S git</div></pre></td></tr></table></figure>
+<h3 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-gcc</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-cmake</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-llvm</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-1686-clang</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-python2</div><div class="line"><span class="variable">$pacman</span> -S mingw-w64-i686-make</div><div class="line"><span class="variable">$pacman</span> -S git</div></pre></td></tr></table></figure>
 <h3 id="下载YouCompleteMe"><a href="#下载YouCompleteMe" class="headerlink" title="下载YouCompleteMe"></a>下载YouCompleteMe</h3><p>可以用vim的插件工具安装，也可以用git手动下载到相应文件夹。github在国内下载可能会<br>很慢，只有50kB/s，可以参考git代理的方法设置一个代理，可以提速。同时还要更新子模块。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/Valloric/YouCompleteMe</div><div class="line">$ <span class="built_in">cd</span> YouCompleteMe</div><div class="line">$ git submodule update --init --recursive</div></pre></td></tr></table></figure>
 <h3 id="编译YouCompleteMe"><a href="#编译YouCompleteMe" class="headerlink" title="编译YouCompleteMe"></a>编译YouCompleteMe</h3><p>在home下新建一个ycmd_build目录用于编译的中间文件存放，编译完可以删掉。<br>找到/mingw32/bin/clang.dll复制一份为clang.dll.4.0不然好像报一个找不到clang.dll.4.0的错</p>
@@ -337,6 +337,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mingw32-make ycm_core [-j 2*核数]</div></pre></td></tr></table></figure>
 <h3 id="编辑vimrc"><a href="#编辑vimrc" class="headerlink" title="编辑vimrc"></a>编辑vimrc</h3><p>要在vimrc中指定python解释器，不然报windows Error2.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> g:ycm_python_binary_path = <span class="string">'python2.exe'</span></div><div class="line"><span class="built_in">let</span> g:ycm_server_python_interpreter = <span class="string">'python2.exe'</span></div></pre></td></tr></table></figure>
+<h3 id="64bit系统说明"><a href="#64bit系统说明" class="headerlink" title="64bit系统说明"></a>64bit系统说明</h3><p>内容基本一样，但是一些i686的命令要改成x86_64,还要参考官网上windows下Unix-like编译<br>环境的编译教程打补丁，和改Cmakefiles。<br><a href="https://github.com/Valloric/YouCompleteMe/wiki/Windows-Installation-Guide-for-Unix%E2%80%90like-Environments" target="_blank" rel="external">Guide for Unix-like Environments</a></p>
+
       
     </div>
 
@@ -433,10 +435,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -457,7 +459,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -470,7 +472,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -504,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MSYS2"><span class="nav-number">1.</span> <span class="nav-text">安装MSYS2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">2.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载YouCompleteMe"><span class="nav-number">3.</span> <span class="nav-text">下载YouCompleteMe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译YouCompleteMe"><span class="nav-number">4.</span> <span class="nav-text">编译YouCompleteMe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑vimrc"><span class="nav-number">5.</span> <span class="nav-text">编辑vimrc</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MSYS2"><span class="nav-number">1.</span> <span class="nav-text">安装MSYS2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">2.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载YouCompleteMe"><span class="nav-number">3.</span> <span class="nav-text">下载YouCompleteMe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译YouCompleteMe"><span class="nav-number">4.</span> <span class="nav-text">编译YouCompleteMe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑vimrc"><span class="nav-number">5.</span> <span class="nav-text">编辑vimrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64bit系统说明"><span class="nav-number">6.</span> <span class="nav-text">64bit系统说明</span></a></li></ol></div>
             
 
           </div>
@@ -536,7 +538,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
