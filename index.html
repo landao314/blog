@@ -137,13 +137,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -255,7 +255,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
   
@@ -366,6 +366,16 @@
 <p>编辑/project/root下的node_module/hexo-renderer-restructuredtext/index.js</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn;</div><div class="line"></div><div class="line"><span class="keyword">var</span> rstRenderer = <span class="function"><span class="keyword">function</span>(<span class="params">data, options, callback</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> args = [<span class="string">'D:/msys32/mingw32/bin/rst2html.py'</span>, <span class="string">'--math-output="MathJax"'</span>,</div><div class="line">              <span class="string">'--smart-quotes="yes"'</span>, <span class="string">'--traceback'</span>];</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> src = data.text.toString();</div><div class="line"></div><div class="line">	<span class="keyword">var</span> rst = spawn(<span class="string">'python2.exe'</span>, args);</div><div class="line"></div><div class="line">	<span class="keyword">var</span> result = <span class="string">''</span>;</div><div class="line">	<span class="keyword">var</span> error = <span class="string">''</span>;</div><div class="line"></div><div class="line">	rst.stdout.setEncoding(<span class="string">'utf8'</span>);</div><div class="line">	</div><div class="line">	rst.stdout.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">		result += data.toString();</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	rst.stderr.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">		error += data.toString();</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	rst.stdin.write(src, <span class="string">'utf8'</span>);</div><div class="line"></div><div class="line">	rst.on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">code, signal</span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> msg = <span class="string">''</span>;</div><div class="line">		<span class="keyword">if</span> (code !== <span class="number">0</span>)</div><div class="line">			msg += <span class="string">'rst2html exited with code '</span>+code+(error ? <span class="string">': '</span> : <span class="string">'.'</span>);</div><div class="line">		<span class="keyword">if</span> (error) &#123;</div><div class="line">      <span class="keyword">if</span> (data.path) &#123;</div><div class="line">        <span class="built_in">console</span>.warn(<span class="string">'Error found when processing '</span> + data.path);</div><div class="line">      &#125;</div><div class="line">			msg += error;</div><div class="line">    &#125;</div><div class="line">		<span class="keyword">if</span> (msg)</div><div class="line">			<span class="keyword">return</span> callback(<span class="keyword">new</span> <span class="built_in">Error</span>(msg));</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">if</span> (result === <span class="string">''</span>) <span class="built_in">console</span>.log(<span class="string">"The next file error: "</span>);</div><div class="line">			callback(<span class="literal">null</span>, result);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	</div><div class="line">    rst.stdin.end();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">hexo.extend.renderer.register(<span class="string">'rst'</span>, <span class="string">'html'</span>, rstRenderer);</div></pre></td></tr></table></figure>
 <p>主要是rst2html这个脚本在Msys2下调用不正确，一定要手动指定python2，然后脚本作参数<br>转入。</p>
+<h2 id="虚拟硬盘VHD封装MSYS2"><a href="#虚拟硬盘VHD封装MSYS2" class="headerlink" title="虚拟硬盘VHD封装MSYS2"></a>虚拟硬盘VHD封装MSYS2</h2><p>MSYS2有很多小文件，如果直接copy,会花很多时间，而且占很多无谓的空间。所以，用VHD<br>生成一个虚拟硬盘，把MSYS2装在里面或者拷进去，就可以封装小文件为一个大文件，而且<br>放在U盘里，直接挂载VHD就可以使用MSYS2,相当方便，我还将chrome和xx-net用这种方式放<br>U盘里随时随地使用。</p>
+<h3 id="生成VHD"><a href="#生成VHD" class="headerlink" title="生成VHD"></a>生成VHD</h3><p>生成VHD还是比较简单，新版BOOTICE里面有选项可以直接生成VHD，挺简单，不说了。</p>
+<h3 id="自动挂载VHD"><a href="#自动挂载VHD" class="headerlink" title="自动挂载VHD"></a>自动挂载VHD</h3><p>如果想常用VHD时，开机自动挂载会比较方便。<br>参考<a href="http://blog.sina.com.cn/s/blog_56799b500102vndh.html" target="_blank" rel="external">开机自动挂载VHD</a><br>提供了三种方法，个人觉得用服务的方式最好，但也是最麻烦.</p>
+<p>在<a href="http://download.csdn.net/detail/zy27ok/2248126" target="_blank" rel="external">这里</a>下载instsrv.exe和srvany.exe<br>放到系统的System32目录里，也可以放到你想放的地方。然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">D:\Path\to\&gt;instsrv.exe [SrvName] D:\path\to\srvany.exe</div><div class="line"></div><div class="line">&gt;instsv.exe MountVdisk D:\Windows\System32\srvany.exe</div></pre></td></tr></table></figure>
+<p>就可以生成一个空服务，然后打开regedit.exe找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MountVdisk]</div></pre></td></tr></table></figure></p>
+<p>新建一个子项Parameters,子项中新建3个值如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\mountVdisk\Parameters]</div><div class="line">&quot;Application&quot;=&quot;diskpart&quot;</div><div class="line">&quot;AppParameters&quot;=&quot;/s e:\\mount.txt&quot;</div><div class="line">&quot;AppDirectory&quot;=&quot;c:\\windows\\system32\\&quot;</div></pre></td></tr></table></figure>
+<p>其中mount.txt是一个挂载程序的脚本，可以挂载多个VHD，内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">select vdisk file=d:\Program.vhd</div><div class="line">attach vdisk</div><div class="line">select vdisk file=d:\Game.vhd</div><div class="line">attach vdisk</div><div class="line">select vdisk file=d:\Documents.vhd</div><div class="line">attach vdisk</div><div class="line">select vdisk file=d:\Temp.vhd</div><div class="line">attach vdisk</div><div class="line">select vdisk file=d:\Workspace.vhd</div><div class="line">attach vdisk</div><div class="line">exit</div></pre></td></tr></table></figure></p>
+<p>最后到管理里找到服务，设成自动就可以开机挂载。</p>
 
       
     </div>
@@ -402,14 +412,14 @@
                 2017 Landao He
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -418,7 +428,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -451,9 +461,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
