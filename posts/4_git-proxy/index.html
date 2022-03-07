@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: My Msys2 Manual Site</title>
+    <title>4. git proxy :: My Msys2 Manual Site</title>
 
     
     <link href="/css/nucleus.css?1646668830" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/4_git-proxy/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
-        
+        parent
         
         
         ">
@@ -259,7 +259,7 @@
  
   
     
-      <li data-nav-id="/posts/4_git-proxy/" title="4. git proxy" class="dd-item ">
+      <li data-nav-id="/posts/4_git-proxy/" title="4. git proxy" class="dd-item active">
         <a href="/posts/4_git-proxy/">
         4. git proxy
         
@@ -426,26 +426,88 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/posts/'>Posts</a> > 4. git proxy
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              4. git proxy
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="my-msys2-manual">My Msys2 Manual</h1>
-<p>������Ӧ��Msys2ʱ��һ�˱ʼǣ���¼��װ���̣��������Ѻ��Լ��Ժ���װ����Ҫ��
-����gvim�Լ�youcompleteme��ȫ��������Ϊ�Ƿǹٷ�֧�ֵı��뻷������������Ҫ��
-��gvim��д��Ƭ����C���룬������Msys2������������U��Я����</p>
+<p>我常用的是GoAgent的梯子，即是XX-net
+但是一个比较麻烦的问题是Ca根证书要手动导入
+这是Windows7下的Msys2环境下的git，linux下类似
+首先要设置git的代理服务器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$git config --global http.proxy http://localhost:8087
+</code></pre></div><p>这时使用git时会报证书错误，所以要导入证书</p>
+<p>可以用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GIT_CURL_VERBOSE<span style="color:#f92672">=</span>true git clone https://google.com
+</code></pre></div><p>查看CAfile和CApath确定git是用哪一个证书的，linux下应该会是系统证书的地方
+但是Msys2下是</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">D:<span style="color:#ae81ff">\m</span>sys32<span style="color:#ae81ff">\u</span>sr<span style="color:#ae81ff">\s</span>sl<span style="color:#ae81ff">\c</span>erts<span style="color:#ae81ff">\c</span>a-bundle.crt
+</code></pre></div><p>于是我将GoAgent的证书直接粘贴到这个文件的未尾，注意不要有多余的空行和字符</p>
+<p>现在git下载github上的文件速度可以说大辐提速，从50KB/s跳到1.5MB/s，爽！！</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -477,8 +539,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -492,6 +552,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -541,6 +604,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -556,6 +620,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -660,8 +727,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/3_youcompleteme-on-msys2/" title="3. YouCompleteMe on Msys2"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/5_github-rsa/" title="5. git rsa setting" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

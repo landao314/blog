@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: My Msys2 Manual Site</title>
+    <title>9. InstantRst no Msys2 :: My Msys2 Manual Site</title>
 
     
     <link href="/css/nucleus.css?1646668830" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/9_instantrst-no-msys2/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
-        
+        parent
         
         
         ">
@@ -364,7 +364,7 @@
  
   
     
-      <li data-nav-id="/posts/9_instantrst-no-msys2/" title="9. InstantRst no Msys2" class="dd-item ">
+      <li data-nav-id="/posts/9_instantrst-no-msys2/" title="9. InstantRst no Msys2" class="dd-item active">
         <a href="/posts/9_instantrst-no-msys2/">
         9. InstantRst no Msys2
         
@@ -426,26 +426,139 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/posts/'>Posts</a> > 9. InstantRst no Msys2
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#instantrst-on-msys2发现了更好的替代软件markdown-composer">InstantRst on Msys2(发现了更好的替代软件markdown composer）</a></li>
+        <li><a href="#host问题">HOST问题</a></li>
+        <li><a href="#多线程返回问题">多线程返回问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              9. InstantRst no Msys2
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="my-msys2-manual">My Msys2 Manual</h1>
-<p>������Ӧ��Msys2ʱ��һ�˱ʼǣ���¼��װ���̣��������Ѻ��Լ��Ժ���װ����Ҫ��
-����gvim�Լ�youcompleteme��ȫ��������Ϊ�Ƿǹٷ�֧�ֵı��뻷������������Ҫ��
-��gvim��д��Ƭ����C���룬������Msys2������������U��Я����</p>
+<h3 id="instantrst-on-msys2发现了更好的替代软件markdown-composer">InstantRst on Msys2(发现了更好的替代软件markdown composer）</h3>
+<p>按照 <a href="https://github.com/Rykka/riv.vim">riv.vm官网</a>
+按照 <a href="https://github.com/Rykka/InstantRst">InstantRst官网</a>
+按照 <a href="https://github.com/rykka/instant-rst.py">instant-rst.py官网</a></p>
+<p>先在Msys2上用pacman安装好pip，然后用pip按照官网的地址安装InstantRst
+vim里用插件工具安装好riv和instantRst.但是这时候vim里:InstantRst只能开服务
+不能自动打开浏览器.之前查到问题出在脚本instantRst上.</p>
+<h3 id="host问题">HOST问题</h3>
+<p>cd到/mingw/bin,打开instantRst,找到def browse(b,&hellip;&hellip;)函数,添加bhost参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">browse</span>(b, port, filename, bhost):
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+    url <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#39;http://&#39;</span> <span style="color:#f92672">+</span> bhost <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span><span style="color:#f92672">+</span> port
+</code></pre></div><p>后面调用也要添加bhost参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> ag<span style="color:#f92672">.</span>localhost_only:
+    HOST <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#75715e"># get hostname of local LAN IP</span>
+    HOST <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>gethostbyname(socket<span style="color:#f92672">.</span>gethostname())
+
+p <span style="color:#f92672">=</span> Process(target<span style="color:#f92672">=</span>browse, args<span style="color:#f92672">=</span>(ag<span style="color:#f92672">.</span>browser, ag<span style="color:#f92672">.</span>port, ag<span style="color:#f92672">.</span>filename, HOST))
+</code></pre></div><h3 id="多线程返回问题">多线程返回问题</h3>
+<p>instantRst这个脚本开了线程运行服务后,应该返回到原脚本上,但是在Msys2下其返回到
+instantRst.py这个文件上,注意啦是多了&quot;.py&quot;,然后我就复制多一份原来的instantRst并
+改为instantRst.py,但因为python的一些问题,要添加freeze_support和rstmain</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process,freeze_support
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rstmain</span>():
+	ag <span style="color:#f92672">=</span> args<span style="color:#f92672">.</span>parse()
+
+	<span style="color:#66d9ef">if</span> ag<span style="color:#f92672">.</span>localhost_only:
+	    HOST <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>
+	<span style="color:#66d9ef">else</span>:
+	    <span style="color:#75715e"># get hostname of local LAN IP</span>
+	    HOST <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>gethostbyname(socket<span style="color:#f92672">.</span>gethostname())
+
+	p <span style="color:#f92672">=</span> Process(target<span style="color:#f92672">=</span>browse, args<span style="color:#f92672">=</span>(ag<span style="color:#f92672">.</span>browser, ag<span style="color:#f92672">.</span>port, ag<span style="color:#f92672">.</span>filename, HOST))
+	p<span style="color:#f92672">.</span>start()
+
+	<span style="color:#66d9ef">try</span>:
+	    run(host<span style="color:#f92672">=</span>HOST, port<span style="color:#f92672">=</span>int(ag<span style="color:#f92672">.</span>port),
+		template_dir<span style="color:#f92672">=</span>ag<span style="color:#f92672">.</span>template_dir,
+		static_dir<span style="color:#f92672">=</span>ag<span style="color:#f92672">.</span>static_dir,
+		additional_dirs<span style="color:#f92672">=</span>ag<span style="color:#f92672">.</span>additional_dirs)
+	<span style="color:#66d9ef">except</span>:
+	    print <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Some error/exception occurred.&#39;</span>
+	    print sys<span style="color:#f92672">.</span>exc_info()
+	    p<span style="color:#f92672">.</span>terminate()
+	    sys<span style="color:#f92672">.</span>exit()
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+	freeze_support()
+	rstmain()
+
+</code></pre></div><p>简单说就是要将执行的代码放到rstmain里,再在下面调用,这样就可以调出浏览器了啊.</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -477,8 +590,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -492,6 +603,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -621,6 +735,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -636,6 +751,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -660,8 +778,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/8_vimim-on-msys2/" title="8. Vimim on Msys2"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/11_hugo/" title="10. Install Hugo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

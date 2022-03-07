@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: My Msys2 Manual Site</title>
+    <title>2. Gvim Install :: My Msys2 Manual Site</title>
 
     
     <link href="/css/nucleus.css?1646668830" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/2_gvim_install/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
-        
+        parent
         
         
         ">
@@ -217,7 +217,7 @@
  
   
     
-      <li data-nav-id="/posts/2_gvim_install/" title="2. Gvim Install" class="dd-item ">
+      <li data-nav-id="/posts/2_gvim_install/" title="2. Gvim Install" class="dd-item active">
         <a href="/posts/2_gvim_install/">
         2. Gvim Install
         
@@ -426,26 +426,120 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/posts/'>Posts</a> > 2. Gvim Install
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              2. Gvim Install
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="my-msys2-manual">My Msys2 Manual</h1>
-<p>ÕâÊÇÎÒÓ¦ÓÃMsys2Ê±µÄÒ»´Ë±Ê¼Ç£¬¼ÇÂ¼°²×°¹ı³Ì£¬·½±ãÍøÓÑºÍ×Ô¼ºÒÔºóÖØ×°¡£Ö÷ÒªÊÇ
-±àÒëgvimÒÔ¼°youcompleteme²¹È«ÉñÆ÷£¬ÒòÎªÊÇ·Ç¹Ù·½Ö§³ÖµÄ±àÒë»·¾³£¬¶øÇÒÎÒÖ÷ÒªÊÇ
-ÓÃgvim±àĞ´µ¥Æ¬»úµÄC´úÂë£¬ËùÒÔÓÃMsys2»·¾³£¬·½±ãÓÃUÅÌĞ¯´ø¡£</p>
+<p>#. ä»githubä¸Šclone vimçš„æœ€æ–°ä»£ç åˆ°/opt/gvim/vim</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#mkdir /opt/gvim</span>
+<span style="color:#75715e">#cd /opt/gvim</span>
+<span style="color:#75715e">#git clone git://github.com/vim/vim.git</span>
+<span style="color:#75715e">#cd vim/src</span>
+</code></pre></div><p>#. ä¿®æ”¹Make_ming.makæ·»åŠ å¦‚ä¸‹ä»£ç ,ä¸»è¦æ·»åŠ pythonå’Œluaçš„ä¾èµ–ï¼Œ
+ä¾æ®ä½ çš„ç³»ç»Ÿä¿®æ”¹MSYS2å˜é‡ï¼š</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile">UNDER_CYGWIN <span style="color:#f92672">=</span> no
+MSYS2<span style="color:#f92672">=</span>N:/msys64
+
+PYTHON<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64
+PYTHON_HOME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64
+PYTHON_VER<span style="color:#f92672">=</span><span style="color:#ae81ff">27</span>
+PYTHONINC<span style="color:#f92672">=</span>-I<span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64/include/python2.7
+DYNAMIC_PYTHON_DLL<span style="color:#f92672">=</span>libpython2.7.dll
+
+PYTHON3<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64
+PYTHON3_HOME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64
+PYTHON3_VER<span style="color:#f92672">=</span><span style="color:#ae81ff">39</span>
+PYTHON3INC<span style="color:#f92672">=</span>-I<span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64/include/python3.9
+DYNAMIC_PYTHON3_DLL<span style="color:#f92672">=</span>libpython3.9.dll
+
+STATIC_STDCPLUS<span style="color:#f92672">=</span>yes
+LUA<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>MSYS2<span style="color:#66d9ef">)</span>/mingw64
+LUA_VER<span style="color:#f92672">=</span><span style="color:#ae81ff">54</span>
+DYNAMIC_LUA<span style="color:#f92672">=</span>yes
+<span style="color:#960050;background-color:#1e0010">include</span> <span style="color:#960050;background-color:#1e0010">Make_cyg_ming.mak</span>
+</code></pre></div><p>#. ç¼–è¯‘gvim,-jå‚æ•°æ˜¯å¤šçº¿ç¨‹ç¼–è¯‘ï¼Œä½ çš„CPUå‡ å¤šçº¿ç¨‹å°±ç”¨2å€çš„æ•°,å¦‚æœå¤šæ¬¡ç¼–è¯‘
+é‚£ä¹ˆå¯ä»¥æŠŠä¸‹é¢å‘½ä»¤åšæˆè„šæœ¬ã€‚</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#mingw32-make -f Make_ming.mak -j 8</span>
+<span style="color:#75715e">#cd ..</span>
+<span style="color:#75715e">#mkdir -p vim82-x86_64/vim82</span>
+<span style="color:#75715e">#cp -a runtime/* vim82-x86_64/vim82</span>
+<span style="color:#75715e">#cp -a src/*.exe vim82-x86_64/vim82</span>
+<span style="color:#75715e">#cp -a src/GvimExt/gvimext.dll vim82-x86_64/vim82</span>
+<span style="color:#75715e">#cp -a src/xxd/xxd.exe vim82-x86_64/vim82</span>
+<span style="color:#75715e">#cp -a vimtutor.bat vim82-x86_64/vim82</span>
+<span style="color:#75715e">#cp -a /mingw64/bin/lua54.dll vim82-x86_64/vim82</span>
+</code></pre></div><p>#. ç„¶åå¤åˆ¶äºŒè¿›åˆ¶æ–‡ä»¶åˆ°ç›¸åº”ç›®å½•é‡Œ</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#cp vim82-x86_64/vim82 /opt/gvim/</span>
+<span style="color:#75715e">#mkdir /opt/gvim/vimfiles</span>
+<span style="color:#75715e">#mkdir /opt/gvim/vimfiles/autoload</span>
+<span style="color:#75715e">#mkdir /opt/gvim/vimfiles/plugged</span>
+</code></pre></div><p>#. åœ¨/opt/gvim/ä¸‹ç”Ÿæˆ_vimrcé…ç½®æ–‡ä»¶
+å…</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -477,8 +571,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -492,6 +584,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -509,6 +604,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -524,6 +620,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -660,8 +759,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/1_msys2_install/" title="1. Install Msys2 In China"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/3_youcompleteme-on-msys2/" title="3. YouCompleteMe on Msys2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

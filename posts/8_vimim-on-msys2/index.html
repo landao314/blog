@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: My Msys2 Manual Site</title>
+    <title>8. Vimim on Msys2 :: My Msys2 Manual Site</title>
 
     
     <link href="/css/nucleus.css?1646668830" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/8_vimim-on-msys2/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
-        
+        parent
         
         
         ">
@@ -343,7 +343,7 @@
  
   
     
-      <li data-nav-id="/posts/8_vimim-on-msys2/" title="8. Vimim on Msys2" class="dd-item ">
+      <li data-nav-id="/posts/8_vimim-on-msys2/" title="8. Vimim on Msys2" class="dd-item active">
         <a href="/posts/8_vimim-on-msys2/">
         8. Vimim on Msys2
         
@@ -426,26 +426,98 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/posts/'>Posts</a> > 8. Vimim on Msys2
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装vimimgvim己带输入法自动切换vim有插件切换">安装VIMIM(gvim己带输入法自动切换，vim有插件切换）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              8. Vimim on Msys2
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="my-msys2-manual">My Msys2 Manual</h1>
-<p>������Ӧ��Msys2ʱ��һ�˱ʼǣ���¼��װ���̣��������Ѻ��Լ��Ժ���װ����Ҫ��
-����gvim�Լ�youcompleteme��ȫ��������Ϊ�Ƿǹٷ�֧�ֵı��뻷������������Ҫ��
-��gvim��д��Ƭ����C���룬������Msys2������������U��Я����</p>
+<h3 id="安装vimimgvim己带输入法自动切换vim有插件切换">安装VIMIM(gvim己带输入法自动切换，vim有插件切换）</h3>
+<p>先用插件字装工具，安装vimim</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Plug <span style="color:#e6db74">&#39;vim-scripts/VimIm&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:PlugInstall
+</code></pre></div><p>再自己整理一个五笔98的码表，先码后字地一个个排好，我是从ibus里的五笔98码表里
+提取出来的，用vim整理一下格式就可以用了。不过文件名一定要vimim.xxxx.txt这种格式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gi	<span style="color:#75715e">#进入中文输入模式</span>
+
+Ctrl+_	<span style="color:#75715e">#切换中英</span>
+
+Ctrl+^	<span style="color:#75715e">#切换输入法</span>
+</code></pre></div><p>最后还是没法切换中英文标点，但是我发现按Alt是可以输入英文标点，至少写这编Markdown
+时没有什么大问题。</p>
+<p>我了解了一下小狼毫的后端，其实是有可能在vimim的基础上加入支持librime的输入法神器
+不过得两方面都得研究清楚，得花时间啊。。。。。。</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -477,8 +549,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -492,6 +562,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -605,6 +678,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -620,6 +694,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -660,8 +737,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/7_vim_markdown_composer/" title="7.vim_markdown_composer"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/9_instantrst-no-msys2/" title="9. InstantRst no Msys2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

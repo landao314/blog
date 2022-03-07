@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: My Msys2 Manual Site</title>
+    <title>3. YouCompleteMe on Msys2 :: My Msys2 Manual Site</title>
 
     
     <link href="/css/nucleus.css?1646668830" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/posts/3_youcompleteme-on-msys2/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
-        
+        parent
         
         
         ">
@@ -238,7 +238,7 @@
  
   
     
-      <li data-nav-id="/posts/3_youcompleteme-on-msys2/" title="3. YouCompleteMe on Msys2" class="dd-item ">
+      <li data-nav-id="/posts/3_youcompleteme-on-msys2/" title="3. YouCompleteMe on Msys2" class="dd-item active">
         <a href="/posts/3_youcompleteme-on-msys2/">
         3. YouCompleteMe on Msys2
         
@@ -426,26 +426,118 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/posts/'>Posts</a> > 3. YouCompleteMe on Msys2
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安装msys2">安装MSYS2</a></li>
+        <li><a href="#安装依赖软件">安装依赖软件</a></li>
+        <li><a href="#下载youcompleteme">下载YouCompleteMe</a></li>
+        <li><a href="#编译youcompleteme">编译YouCompleteMe</a></li>
+        <li><a href="#编辑vimrc">编辑vimrc</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              3. YouCompleteMe on Msys2
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="my-msys2-manual">My Msys2 Manual</h1>
-<p>������Ӧ��Msys2ʱ��һ�˱ʼǣ���¼��װ���̣��������Ѻ��Լ��Ժ���װ����Ҫ��
-����gvim�Լ�youcompleteme��ȫ��������Ϊ�Ƿǹٷ�֧�ֵı��뻷������������Ҫ��
-��gvim��д��Ƭ����C���룬������Msys2������������U��Я����</p>
+<h3 id="安装msys2">安装MSYS2</h3>
+<p>先安装MSYS2，然后更换软件源地址：
+<a href="https://gist.github.com/elvisw/cc00088e9c8fd1c83aca">MSYS2国内源</a>
+不过文件里的地址过时了，下面有个回复说了新的地址，不过要手动输入。
+替换完成，更新一下Msys2的软件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Syu
+</code></pre></div><h3 id="安装依赖软件">安装依赖软件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$pacman -S mingw-w64-i686-gcc
+$pacman -S mingw-w64-i686-cmake
+$pacman -S mingw-w64-i686-llvm
+$pacman -S mingw-w64-i686-python2
+$pacman -S mingw-w64-i686-make
+$pacman -S git
+</code></pre></div><h3 id="下载youcompleteme">下载YouCompleteMe</h3>
+<p>可以用vim的插件工具安装，也可以用git手动下载到相应文件夹。github在国内下载可能会
+很慢，只有50kB/s，可以参考git代理的方法设置一个代理，可以提速。同时还要更新子模块。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/Valloric/YouCompleteMe
+$ cd YouCompleteMe
+$ git submodule update --init --recursive
+</code></pre></div><h3 id="编译youcompleteme">编译YouCompleteMe</h3>
+<p>在home下新建一个ycmd_build目录用于编译的中间文件存放，编译完可以删掉。
+找到/mingw32/bin/clang.dll复制一份为clang.dll.4.0不然好像报一个找不到clang.dll.4.0的错</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir ycmd_build
+$ cd ycmd_build
+$ cmake -G <span style="color:#e6db74">&#34;MSYS Makefiles&#34;</span> -DPATH_TO_LLVM_ROOT<span style="color:#f92672">=</span>/mingw32 -DCMAKE_C_COMPILER<span style="color:#f92672">=</span>/mingw32/bin/gcc.exe -DCMAKE_CXX_COMPILER<span style="color:#f92672">=</span>/mingw32/bin/g++.exe -DCMAKE_MAKE_PROGRAM<span style="color:#f92672">=</span>/mingw32/bin/mingw32-make . /usr/share/vim/vimfiles/plugged/YouCompleteMe/third_party/ycmd/cpp/
+</code></pre></div><p>如果不报错就生成了Makefile，这时可以用mingw32-make编译了,多核可以加 -j 参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mingw32-make ycm_core <span style="color:#f92672">[</span>-j 2*核数<span style="color:#f92672">]</span>
+</code></pre></div><h3 id="编辑vimrc">编辑vimrc</h3>
+<p>要在vimrc中指定python解释器，不然报windows Error2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">let g:ycm_python_binary_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;python2.exe&#39;</span>
+let g:ycm_server_python_interpreter <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;python2.exe&#39;</span>
+</code></pre></div>
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -477,8 +569,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -492,6 +582,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -525,6 +618,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -540,6 +634,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -660,8 +757,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/posts/2_gvim_install/" title="2. Gvim Install"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/4_git-proxy/" title="4. git proxy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
